@@ -183,7 +183,8 @@ I also maintain codebases in Go where we use GORM. They have an API that is exac
 // begin a transaction
 tx := db.Begin()
 
-// do some database operations in the transaction (use 'tx' from this point, not 'db')
+// do some database operations in the transaction
+// (use 'tx' from this point, not 'db')
 tx.Create(...)
 
 // ...
@@ -238,7 +239,7 @@ boxplot(() => {
 await run()
 ```
 
-![proxy-benchmark.png](./2025-02-23 proxy-benchmark.png)
+![proxy-benchmark.png](./2025-02-23-proxy-benchmark.png)
 
 This shows that wrapping the client with a proxy slows down access by a factor of 6. I also ran tests where the proxied client was cached instead of re-wrapped on every iteration of the benchmark, and the result was the same, which means that the instantiation of the proxy doesn’t have a measurable impact.
 
