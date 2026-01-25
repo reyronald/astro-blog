@@ -13,8 +13,10 @@ const posts = (await getCollection('blog')).sort(
 
 <BaseLayout>
   <main>
-    <div class="flex lg:flex-row flex-col gap-18 max-w-4xl mx-auto pt-8 pb-16 lg:px-0 px-8">
-      <div class="w-48 shrink-0 lg:sticky top-8 self-start mx-auto">
+    <div
+      class="flex lg:flex-row flex-col gap-18 mx-auto pt-8 pb-16 lg:px-0 px-8 lg:w-[clamp(1023px,90vw,1200px)]"
+    >
+      <div class="w-56 shrink-0 lg:sticky top-8 self-start mx-auto">
         <Image
           src={profileImage}
           alt="Ronald Rey"
@@ -128,7 +130,7 @@ const posts = (await getCollection('blog')).sort(
             posts.map((post) => (
               <a
                 href={`/blog/${post.id}/`}
-                class="pb-4  block rounded-lg bg-zinc-900/50 hover:bg-zinc-900 overflow-hidden"
+                class="pb-4 block rounded-lg bg-zinc-900/50 hover:bg-zinc-900 overflow-hidden"
               >
                 <article class="flex flex-col gap-8">
                   {post.data.heroImage && (
