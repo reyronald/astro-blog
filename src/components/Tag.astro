@@ -17,6 +17,6 @@ const TAG_COLORS: Record<string, string> = {
 const colors = tag in TAG_COLORS ? TAG_COLORS[tag] : TAG_COLORS.default
 ---
 
-<span class={`mr-2 px-2 py-1 text-sm font-bold rounded-full ${colors}`}>
+<span class={`mr-2 rounded-full px-2 py-1 text-sm font-bold ${colors}`}>
   {tag}
 </span>
