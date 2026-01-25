@@ -6,15 +6,15 @@ import { getCollection } from 'astro:content'
 import profileImage from '../assets/profile.jpg'
 import Tag from '../components/Tag.astro'
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-)
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .filter((post) => !post.data.hidden)
 ---
 
 <BaseLayout>
   <main>
     <div
-      class="mx-auto flex flex-col gap-18 px-8 pt-8 pb-16 lg:w-[clamp(1023px,90vw,1200px)] lg:flex-row lg:px-0"
+      class="mx-auto flex flex-col gap-18 px-8 pt-8 pb-16 lg:w-[clamp(958px,90vw,1200px)] lg:flex-row lg:px-0"
     >
       <div class="top-8 mx-auto w-56 shrink-0 self-start lg:sticky">
         <Image
@@ -170,44 +170,6 @@ const posts = (await getCollection('blog')).sort(
 </BaseLayout>
 
 <script>
-  // Web Audio API setup - the most modern audio API
-  let audioContext: AudioContext | null = null
-  let audioBuffer: AudioBuffer | null = null
-
-  // Initialize audio context and load sound
-  async function initAudio() {
-    if (!audioContext) {
-      audioContext = new AudioContext()
-
-      // Fetch and decode the audio file
-      const response = await fetch('/sounds/switch-on.mp3')
-      const arrayBuffer = await response.arrayBuffer()
-      audioBuffer = await audioContext.decodeAudioData(arrayBuffer)
-    }
-  }
-
-  // Play the sound using Web Audio API
-  function playSound() {
-    if (!audioContext || !audioBuffer) return
-
-    const source = audioContext.createBufferSource()
-    source.buffer = audioBuffer
-    source.connect(audioContext.destination)
-    source.start(0)
-  }
-
-  // Add click handlers to all links
-  document.addEventListener('astro:page-load', () => {
-    const links = document.querySelectorAll('a')
-
-    links.forEach((link) => {
-      link.addEventListener('click', () => {
-        playSound()
-      })
-    })
-  })
-
-  await initAudio()
-
+  import '../utils/initSound'
   import '../utils/blurhash'
 </script>

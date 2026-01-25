@@ -15,6 +15,7 @@ const blog = defineCollection({
       heroImage: image().optional(),
       blurhash: z.string(),
       tags: z.array(z.string()),
+      hidden: z.boolean().optional(),
     }),
 })
 

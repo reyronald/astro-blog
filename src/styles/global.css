@@ -20,16 +20,24 @@ html {
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  font-size: clamp(1rem, 2.5vw + 0.5rem, 1.5rem);
   line-height: 1.7;
 
-  background: oklch(0.13 0.01 240);
+  /* font-size: clamp(1rem, 2.5vw + 0.5rem, 1.5rem); */
+
+  /* Update: Using cqi instead of vw + Zoom-friendly rem base */
+  /* Scales between 16px and 24px relative to the container */
+  font-size: clamp(1rem, 0.75rem + 1.5cqi, 1.5rem);
+
+  /* Background remains vibrant using OKLCH */
+  background: linear-gradient(135deg, oklch(0.13 0.02 240), oklch(0.11 0.03 280));
 
   @apply text-slate-400;
 }
 
 p {
   text-align: left;
+  /* New: Limit characters per line for optimal legibility */
+  max-width: 70ch;
 }
 
 a {

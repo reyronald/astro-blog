@@ -51,11 +51,21 @@ const { title, pubDate, heroImage, tags, blurhash } = Astro.props
 </BaseLayout>
 
 <style is:global>
-  h2 {
-    font-size: 3rem;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: bold;
     text-align: left;
     color: var(--color-slate-300);
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.5rem;
   }
 
   article {
@@ -94,5 +104,6 @@ const { title, pubDate, heroImage, tags, blurhash } = Astro.props
 </style>
 
 <script>
+  import '../utils/initSound'
   import '../utils/blurhash'
 </script>

@@ -63,27 +63,27 @@ This theme is based off of the lovely [Bear Blog](https://github.com/HermanMarti
 
 ## TODO
 
-- fluid typography
-- shiki for syntax highlighting
+- add all other blog posts ive written
+- figure out hosting, find domain
 - mdx, can it have interactive components?
-
-- finish reading docs
+- shiki for syntax highlighting
 - can we preload in the background all routes from the homepage?
 - speculation rules?
+- add github's contribution calendar
+- add longer readme/about me
+- show more component from employer portal?
+
+- change astro's default 404 page
+- can i have the github contribution calendar somewhere?
 - HAve claude do an a11y and seo audit
 - find better font
-- gradient on background?
 - animations
 - share button/copy link button
 - revise all meta tags
-- lint? at least tailwind lint rules
 - find a modern css reset
-- can the width of the main container be adaptativ to resolution with newer css units?
 - language picker english/spa/jp
 - can it do cookies?
 - rss feed https://docs.astro.build/en/tutorial/5-astro-api/4/
-- show tags/keywords for blogs somewhere
 - preact comps https://docs.astro.build/en/tutorial/6-islands/1/
 - check out 21st dev to get inspiration and see if i can stand out a bit more
 - ui idea: smoothly transition the about me sidebar to the edge of the screen when clicking a blogpost
-- can i have the github contribution calendar somewhere?
