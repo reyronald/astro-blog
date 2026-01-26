@@ -46,7 +46,9 @@ const { title, pubDate, heroImage, tags, blurhash } = Astro.props
       </div>
     </article>
 
-    <a href="/" class="block pb-16 text-center hover:text-slate-100">← Back to home</a>
+    <a href="/" class="block pb-16 text-center hover:text-slate-100"
+      >← Back to home</a
+    >
   </main>
 </BaseLayout>
 
@@ -69,7 +71,7 @@ const { title, pubDate, heroImage, tags, blurhash } = Astro.props
   }
 
   article {
-    --w: 900px; /* the max-width */
+    --w: 1100px; /* the max-width */
     --m: 1em; /* margin on small screen */
     --_m: max(var(--m), 50cqw - var(--w)/2);
 
@@ -82,9 +84,16 @@ const { title, pubDate, heroImage, tags, blurhash } = Astro.props
         color: var(--color-slate-100);
       }
     }
+
+    img {
+      display: block;
+      margin-inline: auto;
+      max-width: 100%;
+      height: auto;
+    }
   }
 
-  pre {
+  /* pre {
     margin-inline: min(-1 * var(--m), var(--w) / 2 - 50cqw);
     padding: 1rem;
     display: grid;
@@ -96,12 +105,37 @@ const { title, pubDate, heroImage, tags, blurhash } = Astro.props
   pre code {
     display: block;
     min-width: min-content;
-  }
+  } */
 
   ol li {
     list-style: decimal;
     margin-left: 1.5rem;
   }
+
+  .expressive-code {
+    figure.frame {
+      pre {
+        background-color: var(--color-gray-900);
+      }
+    }
+  }
+
+  /* .expressive-code {
+    margin-inline: min(-1 * var(--m), var(--w) / 2 - 50cqw);
+
+    background-color: var(--color-gray-900) !important;
+
+    figure.frame {
+      width: fit-content;
+      margin-inline: auto;
+      box-shadow: none;
+
+      pre {
+        background-color: var(--color-gray-900);
+        border: none;
+      }
+    }
+  } */
 </style>
 
 <script>

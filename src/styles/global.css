@@ -29,15 +29,17 @@ body {
   font-size: clamp(1rem, 0.75rem + 1.5cqi, 1.5rem);
 
   /* Background remains vibrant using OKLCH */
-  background: linear-gradient(135deg, oklch(0.13 0.02 240), oklch(0.11 0.03 280));
+  background: linear-gradient(
+    135deg,
+    oklch(0.13 0.02 240),
+    oklch(0.11 0.03 280)
+  );
 
   @apply text-slate-400;
 }
 
 p {
   text-align: left;
-  /* New: Limit characters per line for optimal legibility */
-  max-width: 70ch;
 }
 
 a {

@@ -1,6 +1,6 @@
 ---
 title: Dealing with open database transactions in Prisma
-description: This post discusses challenges faced when dealing with open database transactions in Prisma and the solution implemented using AsyncLocalStorage and proxies.
+description: Let's discuss challenges faced when dealing with open database transactions in Prisma and my solution implemented using AsyncLocalStorage and proxies.
 pubDate: 2025-02-23
 heroImage: './2025-02-23 amin-hasani-j16dLbiu8Kk-unsplash.jpg'
 blurhash: 'LNGIZNIBD*?u00f,xbRi~qxuoft7'
@@ -97,7 +97,9 @@ In essence, we wanted to go from:
 ```tsx
 // db.ts
 export const prisma = new PrismaClient()
+```
 
+```tsx
 // another-file.ts
 import { prisma } from '@/db'
 
@@ -116,10 +118,14 @@ const _prisma = new PrismaClient()
 
 export const getDbInstance = () => _prisma
 
-export async function runInDbTransaction<T>(fn: (tx: TransactionClient) => Promise<T>) {
+export async function runInDbTransaction<T>(
+  fn: (tx: TransactionClient) => Promise<T>,
+) {
   // ...
 }
+```
 
+```ts
 // another-file.ts
 import { getDbInstance, runInDbTransaction } from '@/db'
 
@@ -139,7 +145,9 @@ With this in place, I can now leverage our asynchronous context to implement the
 ```tsx
 import { ctx } from './asyncContext'
 
-export async function runInDbTransaction<T>(fn: (tx: TransactionClient) => Promise<T>) {
+export async function runInDbTransaction<T>(
+  fn: (tx: TransactionClient) => Promise<T>,
+) {
   const prevTx = ctx.tx
   try {
     const result = await prisma.$transaction(async (tx) => {
@@ -161,7 +169,11 @@ export function getDbInstance(): TransactionClient {
   return new Proxy(_prisma, {
     get(target, prop: keyof typeof _prisma, receiver) {
       const realTarget = ctx.tx || target
-      return Reflect.get<typeof realTarget, keyof typeof realTarget>(realTarget, prop, receiver)
+      return Reflect.get<typeof realTarget, keyof typeof realTarget>(
+        realTarget,
+        prop,
+        receiver,
+      )
     },
   })
 }
