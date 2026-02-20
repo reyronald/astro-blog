@@ -72,6 +72,9 @@ This theme is based off of the lovely [Bear Blog](https://github.com/HermanMarti
 - add github's contribution calendar
 - add longer readme/about me
 - show more component from employer portal?
+- share button on social media
+- add read time
+- front-end vs back-end tags
 
 - change astro's default 404 page
 - can i have the github contribution calendar somewhere?
@@ -90,4 +93,6 @@ This theme is based off of the lovely [Bear Blog](https://github.com/HermanMarti
 - add a calendar icon next to the date, "3 min read" https://allthingssmitty.com/2026/01/12/stop-turning-everything-into-arrays-and-do-less-work-instead/?ck_subscriber_id=174125299
 - try out the background gradient grid here https://libpdf.documenso.com/
   favicon https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
-- write blogs in substack and long twitter, dev.to, medium, liknkedin
+- write blogs in substack and long twitter, dev.to, medium, liknkedin, bluesky
+- buttondown.com for mailing list?
+- get domain with cloudflare or namecheap

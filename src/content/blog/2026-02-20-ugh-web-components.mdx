@@ -1,0 +1,50 @@
+---
+title: Component Library - The beginnings - Part 1
+description: loren ipsum
+pubDate: 2026-02-20
+hero:
+  src: './2026-02-20-ugh-web-components-hero.jpg'
+  blurhash: 'L7CQlY00E20L~TRjI=RjtRV@aJWB'
+  position: 'object-[50%_55%]'
+tags: [front-end, web components]
+---
+
+Photo by <a href="https://unsplash.com/@glencarrie?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glen Carrie</a> on <a href="https://unsplash.com/photos/blue-and-yellow-plastic-blocks-HpMihL323k0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+import Note from '../../components/Note.astro'
+
+<Note>
+This blog post might come off as harsh and critical, but that's not the intent at all. <br />
+I have the utmost respect for all the engineers involved in this initiative, and my goal is to merely document the challenges we faced on our journey through it.
+</Note>
+
+A couple years ago, our company decided to rebrand itself with a much more modern, slick and minimalist image. Besides marketing material, this also needed to be applied to all our digital products. For the purposes of this writing let's refer to this company with the fictitious name of Nova.
+
+Our user experience and design team started to work hard on a unified design system that would be later implemented as code artifacts our engineering teams could leverage in our all past and future applications.
+
+So far, most individual engineering teams were in charge of the implementation of their UIs. There were some shared elements across multiple repos, but mostly it was up them to own that implementation. This meant that there was a lot of duplicative work across the organization when it came to building front-ends. This is wasteful and we all recognized was a good opportunity for cost savings and time efficiencies.
+
+Nova, our company is **_big_**. It's a large corporation. There are dozens of engineering teams and hundreds of engineers in the U.S. alone, and overwhelmingly more than that when you account for other regions like Canada, Europe, and Asia, where the brand has a strong presence on. So needless to say, this initiative was very ambitious and the team had a huge challenge on their hands to delivering something that was open and customizeable enough to cover the use-cases of so many developers, but also strict and closed so that it still adhered faithfully to the design system guidelines.
+
+This is a challenge that's not new to the UI community. We've had this problem statement since we started building non-CLI software and every few years there's a new approach at attempting to nail this balance correctly. To be honest, I was skeptical that the company would be able to pull this off because it requires an enormous amount of experience, discipline and profesionalism, which is not common in the industry.
+
+When the design language and vision was complete, a dedicated engineering team was put together to make this vision a reality in the form of a re-usable shared component library that front-end engineers from other teams could install and immeidately receive a set of plug-and-play ready-to-use components, not have to worry about looks, and focus exclusively on business logic. By the way, this team was outside of the U.S. and reported to leadership from a different region. This will come into play later.
+
+Eventually, they developed a component library for React, but also a set of CSS classes to be used in static sites that were built primarily in CMS software. I was the main stakeholder representative of the U.S. region and the bridge between the component library team and the application teams in the U.S. that needed to use it to migrate existing applications and build new ones.
+
+As I expected, the result wasn't bad, but there were a ton of adoption challenges that made this process rough, to name a few:
+
+## Lack of foresight
+
+Like I mentioned, the component team was in a different region. So when building the library they probably used the applications and existing designs they had access to as a refernece in how to build the public API of the components and had a tight feedback loop with those engineering and design teams.
+
+I imagine this worked really well for them, but when we started using the library in the U.S. we very quickly noticed how some of our user experience patterns had no equivalents in it. The design team struggled to find the common denominator and often ended up compromising on what the components could do, limiting their usefulness for some teams.
+
+There was also a slight disconnect between the Figma component library, and the React implementation. Ocassionally we would get a Figma design hand-off, and notice during development that the corresponding React components could not do what the Figma designs could.
+
+Ideally, we would communicate this back to the component team and get it patched, fixed or improved, but we very quickly discovered that this path was going to be extremely slow and bureaucratic. They operated on the roadmap of their region alone, and although in theory this could be influenced by any consumer of the library at a global level, in practice this was not the case.
+
+What ended up happening is that engineers on our side ended up coding a bunch of both stylistic and functional overrides. It was very common to find wrapper CSS classes that reached into the internals of the components to change something here and there.
+
+- Both the design system and the implementation was not forward thinking enough to take into account all the needs of the applications in the U.S.
+- The team that built it does not work with TypeScript at all.

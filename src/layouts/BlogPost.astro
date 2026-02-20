@@ -8,7 +8,7 @@ import Tag from '../components/Tag.astro'
 
 type Props = CollectionEntry<'blog'>['data'] & { id: string }
 
-const { title, pubDate, heroImage, tags, blurhash } = Astro.props
+const { title, pubDate, tags, hero } = Astro.props
 ---
 
 <BaseLayout>
@@ -17,14 +17,17 @@ const { title, pubDate, heroImage, tags, blurhash } = Astro.props
   <main>
     <div class="mx-auto max-h-120 w-full overflow-hidden">
       {
-        heroImage && (
+        hero && (
           <Image
             width={1000}
             height={420}
-            src={heroImage}
+            src={hero.src}
             alt={title}
-            class="aspect-1000/420 w-full object-cover object-bottom"
-            data-blurhash={blurhash}
+            class:list={[
+              'aspect-1000/420 w-full object-cover',
+              hero.position,
+            ]}
+            data-blurhash={hero.blurhash}
           />
         )
       }

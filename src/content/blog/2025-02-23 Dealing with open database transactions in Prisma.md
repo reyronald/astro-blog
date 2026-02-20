@@ -2,9 +2,12 @@
 title: Dealing with open database transactions in Prisma
 description: Let's discuss challenges faced when dealing with open database transactions in Prisma and my solution implemented using AsyncLocalStorage and proxies.
 pubDate: 2025-02-23
-heroImage: './2025-02-23 amin-hasani-j16dLbiu8Kk-unsplash.jpg'
-blurhash: 'LNGIZNIBD*?u00f,xbRi~qxuoft7'
-tags: [Node.js, Database, ORM, Prisma, Drizzle, Transactions]
+hero:
+  src: './2025-02-23 amin-hasani-j16dLbiu8Kk-unsplash.jpg'
+  blurhash: 'LNGIZNIBD*?u00f,xbRi~qxuoft7'
+  position: 'object-[50%_85%]'
+tags:
+  [back-end, Node.js, Database, ORM, Prisma, Drizzle, Transactions]
 ---
 
 Photo by <a href="https://unsplash.com/@aminhasani?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" >Amin Hasani</a> on <a href="https://unsplash.com/photos/white-ceramic-mug-on-white-table-j16dLbiu8Kk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
