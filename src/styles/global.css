@@ -15,10 +15,12 @@
 }
 
 html {
+  height: 100%;
   container-type: inline-size;
 }
 
 body {
+  height: 100%;
   font-family: 'Ubuntu', sans-serif;
   line-height: 1.7;
 

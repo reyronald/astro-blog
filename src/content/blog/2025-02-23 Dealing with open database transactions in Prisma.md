@@ -9,8 +9,6 @@ tags: [Node.js, Database, ORM, Prisma, Drizzle, Transactions]
 
 Photo by <a href="https://unsplash.com/@aminhasani?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" >Amin Hasani</a> on <a href="https://unsplash.com/photos/white-ceramic-mug-on-white-table-j16dLbiu8Kk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-# Dealing with open database transactions in Prisma
-
 There’s an issue that has been affecting one of the applications I maintain: runtime errors due to timed-out database transactions. The specific constraints that I was dealing with and the way I ended up resolving the issue were a bit interesting, so I felt like writing about it.
 
 For context, this happened in a Node.js v22 application maintained by three fast-paced engineering teams, with a total of over a dozen contributors. We use Prisma v6 as our ORM against a MySQL database. However, everything I mention here is also applicable to Drizzle, another ORM for JavaScript and TypeScript applications.

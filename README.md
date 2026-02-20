@@ -87,3 +87,7 @@ This theme is based off of the lovely [Bear Blog](https://github.com/HermanMarti
 - preact comps https://docs.astro.build/en/tutorial/6-islands/1/
 - check out 21st dev to get inspiration and see if i can stand out a bit more
 - ui idea: smoothly transition the about me sidebar to the edge of the screen when clicking a blogpost
+- add a calendar icon next to the date, "3 min read" https://allthingssmitty.com/2026/01/12/stop-turning-everything-into-arrays-and-do-less-work-instead/?ck_subscriber_id=174125299
+- try out the background gradient grid here https://libpdf.documenso.com/
+  favicon https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+- write blogs in substack and long twitter, dev.to, medium, liknkedin
