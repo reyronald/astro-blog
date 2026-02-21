@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Ronald Rey</title>
+    <link rel="canonical" href="https://reyronald.dev/" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
+    <meta
+      name="description"
+      content="Ronald Rey — personal landing page"
+    />
+    <meta name="author" content="Ronald Rey" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b0f12" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ronald Rey" />
+    <meta
+      property="og:description"
+      content="Ronald Rey — personal landing page"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+      :root {
+        color-scheme: dark;
+        --color-slate-300: oklch(86.9% 0.022 252.894);
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      html {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          Arial,
+          sans-serif;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(
+          135deg,
+          oklch(0.13 0.02 240),
+          oklch(0.11 0.03 280)
+        );
+        color: var(--color-slate-300);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        text-rendering: optimizeLegibility;
+      }
+      main {
+        padding: 2rem;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        font-size: clamp(2rem, 8vw, 5.5rem);
+      }
+      a {
+        color: var(--color-slate-300);
+        text-decoration: inherit;
+        transition:
+          color 0.3s,
+          background-color 0.2s,
+          scale 0.1s;
+        &:hover {
+          scale: 1.05;
+        }
+      }
+      img,
+      h1,
+      h2 {
+        transition: scale 0.3s;
+        &:hover {
+          scale: 1.1;
+        }
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .flex {
+        display: flex;
+      }
+      .space-x-3 > * + * {
+        margin-left: 0.75rem;
+      }
+      .space-y-5 > * + * {
+        margin-top: 1.25rem;
+      }
+      .inline-block {
+        display: inline-block;
+      }
+      .mt-4 {
+        margin-top: 1rem;
+      }
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      .hover\:text-slate-100:hover {
+        color: #f7fafc;
+      }
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      .h-48 {
+        height: 12rem;
+      }
+      .w-48 {
+        width: 12rem;
+      }
+      .rounded-full {
+        border-radius: 9999px;
+      }
+      .object-cover {
+        object-fit: cover;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+      @media (max-width: 420px) {
+        h1 {
+          font-size: clamp(1.6rem, 10vw, 4rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img
+        src="./profile.jpg"
+        alt="Ronald Rey"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="auto"
+        width="219"
+        height="219"
+        class="mb-4 h-48 w-48 rounded-full object-cover"
+      />
+
+      <h1>Ronald Rey</h1>
+      <h2>Software Engineer • Web</h2>
+
+      <div class="mt-4 inline-block space-y-5 text-center">
+        <a
+          href="https://github.com/reyronald"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex space-x-3 text-2xl hover:text-slate-100"
+        >
+          <svg
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            width="32"
+            height="32"
+          >
+            <path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            ></path>
+          </svg>
+          <span>@reyronald</span>
+          <span class="sr-only">Go to Ronald's GitHub repo</span>
+        </a>
+
+        <a
+          href="https://twitter.com/reyronald"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex space-x-3 text-2xl hover:text-slate-100"
+        >
+          <svg
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            width="32"
+            height="32"
+          >
+            <path
+              fill="currentColor"
+              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+            ></path>
+          </svg>
+          <span>@reyronald</span>
+          <span class="sr-only">Follow Ronald on Twitter</span>
+        </a>
+
+        <a
+          href="https://bsky.app/profile/reyronald.bsky.social"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex space-x-3 text-2xl hover:text-slate-100"
+        >
+          <svg fill="none" viewBox="0 0 64 57" width="32" height="32">
+            <path
+              fill="currentColor"
+              d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
+            ></path>
+          </svg>
+          <span>@reyronald</span>
+          <span class="sr-only">Follow Ronald on BlueSky</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/reyronald"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex space-x-3 text-2xl hover:text-slate-100"
+        >
+          <svg
+            viewBox="0 0 34 34"
+            aria-hidden="true"
+            width="32"
+            height="32"
+          >
+            <path
+              fill="#0a66c2"
+              d="M34 2.5v29a2.5 2.5 0 0 1-2.5 2.5h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5M10 13H5v16h5zm.45-5.5a2.88 2.88 0 0 0-2.86-2.9H7.5a2.9 2.9 0 0 0 0 5.8 2.88 2.88 0 0 0 2.95-2.81zM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58h-.14V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58h.19c1.59 0 2.77 1 2.77 3.52V29h5z"
+              display="var(--svgDisplayLight)"
+            ></path>
+            <path
+              fill="#fff"
+              d="M34 2.5v29a2.5 2.5 0 0 1-2.5 2.5h-29A2.5 2.5 0 0 1 0 31.5v-29A2.5 2.5 0 0 1 2.5 0h29A2.5 2.5 0 0 1 34 2.5M10 13H5v16h5zm.45-5.5a2.88 2.88 0 0 0-2.86-2.9H7.5a2.9 2.9 0 0 0 0 5.8 2.88 2.88 0 0 0 2.95-2.81zM29 19.28c0-4.81-3.06-6.68-6.1-6.68a5.7 5.7 0 0 0-5.06 2.58h-.14V13H13v16h5v-8.51a3.32 3.32 0 0 1 3-3.58h.19c1.59 0 2.77 1 2.77 3.52V29h5z"
+              display="var(--svgDisplayDark)"
+            ></path>
+          </svg>
+          <span>@reyronald</span>
+          <span class="sr-only">Follow Ronald on LinkedIn</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
