@@ -46,5 +46,34 @@ Ideally, we would communicate this back to the component team and get it patched
 
 What ended up happening is that engineers on our side ended up coding a bunch of both stylistic and functional overrides. It was very common to find wrapper CSS classes that reached into the internals of the components to change something here and there.
 
-- Both the design system and the implementation was not forward thinking enough to take into account all the needs of the applications in the U.S.
+On the functional side, I'll give you an example. The `Tabs` component did not expose a way to switch tabs programatically, and some of our use-cases needed that. Here's what I did:
+
+```tsx
+const tabsRef = useRef<HTMLDivElement>(null)
+
+const selectTab = () => {
+  const a = tabsRef.current?.querySelector(
+    `[role="tab"][id="${tabsId}-tab-${tabKey}"]`
+  )
+  if (a && a instanceof HTMLElement) {
+    a.click()
+  } else { 
+    throw new Error('Could not find tab')
+  }
+}
+
+<Tabs
+  ref={tabsRef}
+  // ...
+/>
+
+<button onClick={selectTab}>Select tab</button>
+```
+
+Not pretty, right? Seems very fragile as it is reaching and depending on the internal structure of the component. Generally that would make me nervous, but thankfully we have browser-based testing with Vite available now so I can write test cases for stuff like this and be confident that it won't break without me noticing on version updates of the library. A few years ago, before we had that, this would have been a nightmare to maintain.
+
+## Lack of TypeScript support
+
+
+
 - The team that built it does not work with TypeScript at all.
