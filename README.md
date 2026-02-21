@@ -96,3 +96,8 @@ This theme is based off of the lovely [Bear Blog](https://github.com/HermanMarti
 - write blogs in substack and long twitter, dev.to, medium, liknkedin, bluesky
 - buttondown.com for mailing list?
 - get domain with cloudflare or namecheap
+
+## Deployment
+
+- Domain: https://reyronald.me at https://www.spaceship.com/application/domain-list-application/
+- Hosting: Vercel
